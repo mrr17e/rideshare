@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$)&+&%l!6f$ok)rys398u@zm67n!%sugu9sk5oo9#3px5$)y=!'
+SECRET_KEY = '#'
+#when you create project show secret key.
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'rideshare',
         'USER': 'root',
-        'PASSWORD': '95SAD<o4',
+        'PASSWORD': '', #enter your password of mysql database
         'HOST': '',  # or the hostname where your MySQL server is running
         'PORT': '3306',      # or the port on which your MySQL server is listening
     }
