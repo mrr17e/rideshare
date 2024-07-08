@@ -3,7 +3,7 @@ Ride Sharing is a platform connecting drivers with empty seats to passengers hea
 
 # Ride Sharing Project
 
-![Ride Sharing](https://example.com/path-to-your-image.png)
+![Ride Sharing](https://raw.githubusercontent.com/mrr17e/rideshare/main/rideshare/static/git%20share%20ride.png)
 
 ## Overview
 
@@ -45,6 +45,8 @@ The concept behind Ride Sharing is simple:
 - **Add Payment Options**: Adding payment methods including digital wallets and cryptocurrency.
 - **Feedback and Improvement Loop**: Continuously gathering user feedback to improve and add new features that meet our users' needs.
 
-
+![Ride Sharing](https://raw.githubusercontent.com/mrr17e/rideshare/main/rideshare/static/git%20shareride.png)
+![Ride Sharing](https://raw.githubusercontent.com/mrr17e/rideshare/main/rideshare/static/git%20ride%20search.png)
+![Ride Sharing](https://raw.githubusercontent.com/mrr17e/rideshare/main/rideshare/static/git%20ride%20view.png)
 
 
