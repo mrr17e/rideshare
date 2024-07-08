@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HTML Code -->
+<div class="card1">
+    <div class="container2">
+      <h4 class="form-title"><b>Ride Sharing Form</b></h4>
+      <form action = "" method = "POST">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name.." class="form-input" required>
+        
+        <label for="dlno">Driving Licence No.</label>
+        <input type="text" id="dlno" name="dlno" placeholder="Your driving licence number.." class="form-input" required>
+        
+        <label for="vehicletype">Vehicle Type</label>
+        <input type="text" id="vehicletype" list="vehicletype1" name="vehicletype" placeholder="Vehicle Type" class="form-input" required>
+        <datalist id="vehicletype1">
+          <option>Car</option>
+          <option>Bike</option>
+          <option>Scooter</option>
+      </datalist>
+
+        <label for="vehicleno">Vehicle No.</label>
+        <input type="text" id="vehicleno" name="vehicleno" placeholder="Your vehicle number.." class="form-input" required>
+        
+        <label for="number">Mobile No.</label>
+        <input type="text" id="number" name="number" placeholder="Your Mobile number.." class="form-input" required>
+
+        <label for="start">Start </label>
+        <input type="text" id="start" name="start" placeholder="Start location.." class="form-input" required>
+        
+        <label for="end">End </label>
+        <input type="text" id="end" name="end" placeholder="End location.." class="form-input" required>
+        
+        <label for="availability">Availability</label>
+        <input type="number" id="availability" name="availability" min="1" placeholder="Number of seats available.." min="1" class="form-input" required>
+        
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" class="form-input" min="" value="" required>
+        
+        <label for="time">Time</label>
+        <input type="time" id="time" name="time" class="form-input" value=""required>
+        
+        <label for="dlupload">Upload Driving Licence</label>
+        <input type="file" id="dlupload" name="dlupload" class="form-input" required>
+        
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" style="transform: scale(2); margin-right: 15px;" required>
+          <label for="terms"> I agree to the <a href="term">terms and conditions </a></label>
+        </div>
+        
+        <div class="submit-button-container">
+          <input type="submit" value="Submit" class="form-submit">
+        </div>
+      </form>
+      {% if viewride %}
+      <p style="text-align: center; color:red;">Ride Created Successfully.</p>
+      <a href="ridedetail/{{viewride}}"><button>View Ride</button></a>
+      {% else %}
+      {% endif %}
+      {% if data %}
+      <p style="text-align: center; color:red;">Oops Ride Can't Created.</p>
+      {% endif %}
+    </div>
+  </div>
+<script>
+  function getDate() {
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    if(month.toString().length == 1) {
+         month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+         day = '0'+day;
+    }   
+    var date = year+'-'+month+'-'+day;   
+     return date;
+  }
+  function getTime(){
+    var now     = new Date(); 
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    if(hour.toString().length == 1) {
+          hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+          minute = '0'+minute;
+    }
+    var time = hour+':'+minute;
+    return time;
+  }
+  
+  
+  setInterval(function(){
+    currentdate = getDate();
+    currenttime = getTime();
+    document.getElementById("date").value = currentdate;
+    document.getElementById("date").min = currentdate;
+    document.getElementById("time").value = currenttime;
+  }, 1000);
+  </script>
+
+{% endblock %}

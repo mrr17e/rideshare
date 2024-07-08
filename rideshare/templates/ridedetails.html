@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if searchr %}
+{% for item in searchr %}
+<center>
+  <div class="card">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="ride-title" style="text-align: center;">Ride Details</h1>
+        <div class="ride-card">
+          <div class="ride-info">
+            <div class="row">
+              <div class="col-sm-6">
+                <p><strong class="label">Name:</strong> {{ item.name }}</p>
+                <p><strong class="label">Vehicle Type:</strong> {{ item.vt }}</p>
+              </div>
+              <div class="col-sm-6">
+                <p><strong class="label">Start Location:</strong> {{ item.startl }}</p>
+                <p><strong class="label">Last Location:</strong> {{ item.lastl }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p><strong class="label">No. of Seat Available:</strong> {{ item.stavl }}</p>
+              </div>
+              <div class="col-sm-6">
+                <p><strong class="label">Date:</strong> {{ item.date }}</p>
+                <p><strong class="label">Time:</strong> {{ item.time }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="ride-actions">
+            <button class="btn btn-call" style="margin:10px;" onclick="makeCall('{{ item.phone }}')">Call</button>
+            <button class="btn btn-whatsapp" style="margin:10px;" onclick="sendMessage('{{ item.phone }}')">WhatsApp Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+  {% endfor %}
+  {% else %}
+  <div class="resultbox">
+    <p style="font-size: 20px; text-align: center;">Ride Dosen't Exist</p>
+</div>
+{% endif %}
+
+  <script>
+    function makeCall(phoneNumber) {
+      var telLink = "tel:" + phoneNumber;
+      window.location.href = telLink;
+    }
+
+    function sendMessage(phoneNumber) {
+      var whatsappLink = "https://wa.me/" + phoneNumber + "?text=Hello%20I'm%20interested%20in%20your%20ride.";
+      window.location.href = whatsappLink;
+    }
+  </script>
+{% endblock %}
