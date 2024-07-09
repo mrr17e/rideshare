@@ -19,7 +19,7 @@ The concept behind Ride Sharing is simple:
 ## Key Features
 
 1. **Ride Creation and Management**: Post, edit, and delete available rides.
-2. **Ride Search **: Search for rides, filter results.
+2. **Ride Search**: Search for rides, filter results.
 3. **Cost Sharing**: Share cost between both.
 4. **Eco-Friendly Initiatives**: Carbon footprint calculation and incentives for eco-friendly rides.
 
